@@ -19,7 +19,7 @@ body {
 #all-reviews {
 	display: grid;
 	grid-template-columns: 200px 200px 200px 200px;
-	grid-template-rows: 190px 190px;
+	grid-template-rows: auto auto;
 
 	grid-template-areas:
 		"i1 i1 i2 i3"
@@ -127,8 +127,26 @@ body {
 	top: 0;
 	right: 50px;
 } */
+@media (max-width: 899px) {
+	#all-reviews {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-rows: auto;
+		gap: 15px;
+		margin: 20px 40px;
+		grid-template-areas:
+			"i1"
+			"i2"
+			"i3"
+			"i4"
+			"i5";
+	}
+	#all-reviews div {
+		grid-area: auto;
+	}
+}
 
-@media only screen and (max-width: 375px) {
+@media (max-width: 500px) {
 	#all-reviews {
 		display: grid;
 		grid-template-columns: 1fr;
